@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
 
-:root{
+:root {
     /*tekst*/
     --very-dark-desaturated: hsl(238, 29%, 16%);
     --soft-red: hsl(14, 88%, 65%);
@@ -14,7 +14,7 @@
 }
 
 
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -23,56 +23,68 @@
 
 }
 
-body{
+body {
     background: linear-gradient(var(--soft-violet), var(--soft-blue));
-    height:  100vh;
-    width: 100%; 
+    height: 100vh;
+    width: 100%;
+    position: relative;
 }
-main{
+
+main {
     position: relative;
     display: flex;
     flex-direction: column;
-    top:23vh;
+    top: 23vh;
     width: 87vw;
     margin: 0 auto;
-    background-color: var(--light-grayish-blue);
+    background-color: white;
     border-radius: 25px;
     box-shadow: 0 3px 140px var(--very-dark-grayish-blue);
 }
 
-.images{
+.box {
+    position: absolute;
+    width: 50px;
+    left: 20px;
+    top: 50%;
+
+}
+
+.images {
     display: flex;
     width: 100%;
     height: 30%;
     min-height: 105px;
-    margin: 0 auto;  
-    
-    top:-20%;
-   
+    margin: 0 auto;
+
+    top: -20%;
+
 }
 
-img:nth-child(1){
+img:nth-child(1) {
     width: 72%;
     position: absolute;
-    top:0;
+    top: 0;
     left: 50%;
     transform: translate(-50%, -58%);
 }
-img:nth-child(2){
+
+img:nth-child(2) {
     width: 72%;
     position: absolute;
-    top:0;
+    top: 0;
     left: 50%;
     transform: translate(-50%, 0);
 }
 
-.content{
-    
+.content {
+
     padding: 25px;
     height: 70%;
-    
+
 }
-.faq{
+
+.faq {
     text-align: center;
     font-size: 2.5rem;
     padding-top: 5px;
@@ -80,7 +92,7 @@ img:nth-child(2){
 }
 
 
-div h1{
+div h1 {
     position: relative;
     font-weight: 400;
     font-size: 1.1rem;
@@ -88,178 +100,208 @@ div h1{
     margin: 17px 0;
 
 }
-div .icon{
+
+div .icon {
     position: absolute;
     background-image: url(images/icon-arrow-down.svg);
     background-repeat: no-repeat;
     background-position: right;
-   
-     width: 100%;
-    height: 100%; 
+
+    width: 100%;
+    height: 100%;
     top: 0;
     right: 0;
-  
+
 }
-div h1.active div.icon{
+
+div h1.active div.icon {
     transform: rotate(180deg);
     background-position: left;
     /* transition: .2s linear; */
 }
-div h1.active~p{
+
+div h1.active~p {
     display: block;
 }
-div h1.active{
+
+div h1.active {
     font-weight: 700;
     cursor: pointer;
-}
-h1:hover{
-    font-weight: 700;
-    cursor: pointer;
-    color:var(--soft-red);
 }
 
-div p{
+h1:hover {
+    font-weight: 700;
+    cursor: pointer;
+    color: var(--soft-red);
+}
+
+div p {
     color: var(--very-dark-grayish-blue);
     margin-top: 10px;
     display: none;
-   
+
 }
-.border{
-    border-bottom: 1px solid var(--dark-grayish-blue) ;
+
+.border {
+    border-bottom: 1px solid var(--dark-grayish-blue);
     opacity: 0.3;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
 
-@media  only screen and (orientation: landscape) {
+@media only screen and (orientation: landscape) {
 
-main{
-    flex-direction: row;
-    top: 5vh;
-   
-}
-.images{
-    top: 50%;
-    height: 90vh;
-    width: 50%;
-   
-    
-}
-img:nth-child(1){
-    width: 45%;
-    position: absolute;
-    top:50%;
-    left: 15%; 
-      
-}
-img:nth-child(2){
-    width:45%;
-    position: absolute;
-    top:50%;
-    left: 15%;
-    
-}
-.content{
-    width: 50%;
-    
-}
+    main {
+        flex-direction: row;
+        top: 5vh;
+
+    }
+
+    .images {
+        top: 50%;
+        height: 90vh;
+        width: 50%;
+
+
+    }
+
+    img:nth-child(1) {
+        width: 45%;
+        position: absolute;
+        top: 50%;
+        left: 15%;
+
+    }
+
+    img:nth-child(2) {
+        width: 45%;
+        position: absolute;
+        top: 50%;
+        left: 15%;
+
+    }
+
+    .content {
+        width: 50%;
+
+    }
 
 }
-@media  screen and (min-width:500px){
-    main{
+
+@media screen and (min-width:500px) {
+    main {
         flex-direction: column;
-        min-height:60vh;
+        min-height: 60vh;
     }
 
-    img:nth-child(1){
+    img:nth-child(1) {
         width: 50%;
     }
-    img:nth-child(2){
+
+    img:nth-child(2) {
         width: 50%;
     }
-  
+
 
 }
 
-@media screen and (min-width: 600px){
-    main{
+@media screen and (min-width: 600px) {
+    main {
         flex-direction: row;
         top: 15vh;
         overflow: hidden;
     }
-    .images{
+
+    .images {
         display: flex;
         top: 50%;
         height: 50vh;
         width: 50%;
-        
-        
+
+
     }
-    img:nth-child(1){
+
+    img:nth-child(1) {
         width: 45%;
         position: absolute;
-        top:50%;
-        left: 15%;   
-       
-    }
-    img:nth-child(2){
-        width:45%;
-        position: absolute;
-        top:50%;
+        top: 50%;
         left: 15%;
-        
+
     }
-    .content{
+
+    img:nth-child(2) {
+        width: 45%;
+        position: absolute;
+        top: 50%;
+        left: 15%;
+
+    }
+
+    .content {
         width: 50%;
         margin: auto 0;
-       
-    }  
-    .faq{
+
+    }
+
+    .faq {
         text-align: left;
         font-size: 2rem;
-        padding-top: 0;;
+        padding-top: 0;
+        ;
     }
+
     div h1 {
         font-size: 1rem;
-        margin:12px 0;
+        margin: 12px 0;
     }
 
 }
 
-@media screen and (min-width: 800px){
-    main{
-        min-height:60vh;
-        width: 75vw;
+@media screen and (min-width: 800px) {
+    main {
+        min-height: 66vh;
+        width: 58vw;
         flex-direction: row;
         top: 15vh;
         overflow: hidden;
-        
+
     }
-  
-    .faq{
+
+    .faq {
         text-align: left;
         font-size: 2rem;
         padding-top: 0;
     }
+
     div h1 {
         font-size: 1rem;
-        margin:12px 0;
+        margin: 12px 0;
     }
-    .content{
+
+    .content {
         width: 50%;
         margin-top: 4%;
-        padding-left: 15px;
-        margin-right: 50px;
+        padding-left: 40px;
+        margin-right: 70px;
     }
-    img:nth-child(1){
+
+    img:nth-child(1) {
+        width: 50%;
+        top: 55%;
+        left: 17%;
+
+    }
+
+    img:nth-child(2) {
         width: 55%;
-        top:57%;
-       
+        top: 65%;
     }
-    img:nth-child(2){
-        width:55%;
-        top:65%;
+
+    .box {
+
+        top: 50%;
+        width: 50%;
+
     }
 }
-
