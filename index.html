@@ -78,10 +78,10 @@ const pic = document.querySelector('#img1');
 function changePic(){
   
   if (window.innerWidth > 600){
-    console.log('dziala');
+    
     document.getElementById('img1').src = picture[0];
   }
-    else {console.log('nie dziala')
+    else {
     document.getElementById('img1').src = picture[1];}
 }
 window.addEventListener('resize',changePic);
