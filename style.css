@@ -20,288 +20,187 @@
     box-sizing: border-box;
     font-size: 12px;
     font-family: var(--font);
-
 }
 
 body {
     background: linear-gradient(var(--soft-violet), var(--soft-blue));
-    height: 100vh;
-    width: 100%;
-    position: relative;
-}
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}  
 
 main {
     position: relative;
+}
+
+section {
+    position: relative;
     display: flex;
     flex-direction: column;
-    top: 23vh;
-    width: 87vw;
-    margin: 0 auto;
     background-color: white;
+    width: 87.5vw;
     border-radius: 25px;
-    box-shadow: 0 3px 140px var(--very-dark-grayish-blue);
-}
-
-.box {
-    position: absolute;
-    width: 50px;
-    left: 20px;
-    top: 50%;
-    z-index: 3;
-}
-
-.images {
-    display: flex;
-    width: 100%;
-    height: 30%;
-    min-height: 105px;
-    margin: 0 auto;
-
-    top: -20%;
+    padding: 26px;
+    margin: 12rem auto;
 
 }
-
-img:nth-child(1) {
-    width: 72%;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -58%);
+.image{
+    height: 2rem;
+    
 }
-
-img:nth-child(2) {
-    width: 72%;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, 0);
-}
-
 .content {
+margin-top: 7rem;   
 
-    padding: 25px;
-    height: 70%;
+}
 
+
+.mobileImg {
+    position: absolute;
+    top: -9rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 19.9rem;
+    
+}
+
+.mobileBg {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+}
+.desktopImg,
+.desktopBg{
+    display: none;
+}
+
+
+h1 {
+    margin-top: 1.6rem;
+    font-size: 1.1rem;
+    font-weight: 400;
 }
 
 .faq {
+    
+    font-weight: 700;
+    font-size: 2.6rem;
     text-align: center;
-    font-size: 2.5rem;
-    padding-top: 5px;
-    padding-bottom: 15px;
+    margin-bottom: 2.5rem;
 }
 
-
-div h1 {
-    position: relative;
-    font-weight: 400;
-    font-size: 1.1rem;
-    color: var(--very-dark-desaturated);
-    margin: 17px 0;
-
-}
-
-div .icon {
-    position: absolute;
-    background-image: url(images/icon-arrow-down.svg);
-    background-repeat: no-repeat;
-    background-position: right;
-
-    width: 100%;
-    height: 100%;
-    top: 0;
-    right: 0;
-
-}
-
-div h1.active div.icon {
-    transform: rotate(180deg);
-    background-position: left;
-    /* transition: .2s linear; */
-}
-
-div h1.active~p {
-    display: block;
-}
-
-div h1.active {
-    font-weight: 700;
-    cursor: pointer;
-}
-
-h1:hover {
-    font-weight: 700;
-    cursor: pointer;
-    color: var(--soft-red);
-}
-
-div p {
-    color: var(--very-dark-grayish-blue);
-    margin-top: 10px;
+p{
     display: none;
 
 }
-
-.border {
-    border-bottom: 1px solid var(--dark-grayish-blue);
-    opacity: 0.3;
-    margin-top: 10px;
-    margin-bottom: 10px;
+.border{
+    border-bottom: 1px solid gray;
+    margin-top: 1.5rem;
+    opacity: 0.2;
+}
+.faq1,
+.faq2,
+.faq3,  
+.faq4,
+.faq5{
+                
+    position: relative;
+}
+.arrow{
+    background-image: url(images/icon-arrow-down.svg);
+    background-repeat: no-repeat;
+    width: 10px; 
+    height: 10px;
+    position: absolute;
+    right:0;
+    top: 0;
+    margin-top:4px;
+    transition: .1s linear;
+} 
+.box{
+    display: none;
 }
 
 
-@media only screen and (orientation: landscape) {
+h1:hover{
+    cursor: pointer;
+    color: var(--soft-red);
+}
+h1.active{
+    font-weight: 700;
+}
+h1.active~p{
+    display: block;
+    margin-top: 0.9rem;
+    margin-bottom: 1rem;
+    line-height: 18px;
+    width: 90%;
+    opacity: 0.5;
+}
 
-    main {
+h1.active~.arrow{
+    transform: rotate(180deg);
+    transform-origin: center;
+    margin-top:2px;
+}
+/* .text{
+    width: 22rem;
+} */
+
+@media only screen and (min-width:800px){
+    section{
         flex-direction: row;
-        top: 5vh;
-
-    }
-
-    .images {
-        top: 50%;
-        height: 90vh;
-        width: 50%;
-
-
-    }
-
-    img:nth-child(1) {
-        width: 45%;
-        position: absolute;
-        top: 50%;
-        left: 15%;
-
-    }
-
-    img:nth-child(2) {
-        width: 45%;
-        position: absolute;
-        top: 50%;
-        left: 15%;
-
-    }
-
-    .content {
-        width: 50%;
-
-    }
-
-}
-
-@media screen and (min-width:500px) {
-    main {
-        flex-direction: column;
-        min-height: 60vh;
-    }
-
-    img:nth-child(1) {
-        width: 50%;
-    }
-
-    img:nth-child(2) {
-        width: 50%;
-    }
-
-
-}
-
-@media screen and (min-width: 600px) {
-    main {
-        flex-direction: row;
-        top: 15vh;
+        width: 740px;
         overflow: hidden;
+        margin: 5rem;
     }
-
-    .images {
-        display: flex;
-        top: 50%;
-        height: 50vh;
-        width: 50%;
-
-
-    }
-
-    img:nth-child(1) {
+    .image {
         width: 45%;
+        height: 100%;
+        position: relative;
+        
+
+
+    }
+    .mobileImg,
+    .mobileBg{
+        display: none;
+    }
+
+    .desktopImg{
+        display: block;
         position: absolute;
-        top: 50%;
-        left: 15%;
-
+        left: -7.5rem;
+        top:3rem;
+        width: 121%;
+        z-index: 1;
     }
-
-    img:nth-child(2) {
-        width: 45%;
+    .desktopBg{
+        display: block;
         position: absolute;
-        top: 50%;
-        left: 15%;
-
+        width: 250%;
+        top: -21.5rem;
+        left: -41rem;
     }
-
-    .content {
-        width: 50%;
-        margin: auto 0;
-
+    .box{
+        display: block;
+        position: absolute;
+        top: 19rem;
+        left: -1.5rem;
+        width: 18%;
+        z-index: 2;
     }
-
-    .faq {
+    .content{
+        height: 100%;
+        padding-left: 4.6rem; 
+        margin-top: 2rem; 
+    }
+    .text{
+        width: 22.5rem;
+    }  
+    .faq{
+        font-size: 2.2rem ;
         text-align: left;
-        font-size: 2rem;
-        padding-top: 0;
-        ;
-    }
-
-    div h1 {
-        font-size: 1rem;
-        margin: 12px 0;
-    }
-
-}
-
-@media screen and (min-width: 800px) {
-    main {
-        min-height: 66vh;
-        width: 58vw;
-        flex-direction: row;
-        top: 15vh;
-        overflow: hidden;
-
-    }
-
-    .faq {
-        text-align: left;
-        font-size: 2rem;
-        padding-top: 0;
-    }
-
-    div h1 {
-        font-size: 1rem;
-        margin: 12px 0;
-    }
-
-    .content {
-        width: 50%;
-        margin-top: 4%;
-        padding-left: 40px;
-        margin-right: 70px;
-    }
-
-    img:nth-child(1) {
-        width: 50%;
-        top: 55%;
-        left: 17%;
-
-    }
-
-    img:nth-child(2) {
-        width: 55%;
-        top: 65%;
-    }
-
-    .box {
-
-        top: 50%;
-        width: 50%;
-
     }
 }

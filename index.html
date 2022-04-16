@@ -1,91 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+
   <title>Frontend Mentor | FAQ Accordion Card</title>
 
 </head>
+
 <body>
-  <img src="images/illustration-box-desktop.svg" alt="box" class="box">
-<main>
-
-  <section class="images">
-   
-   
-   <img src="images/illustration-woman-online-mobile.svg" alt="picture mobile" id="img1">
-    
-    <img src="images/bg-pattern-mobile.svg" alt="shadow">
-   
-  </section>
-  <section class="content">
-    <h2 class="faq">FAQ</h2>
-    <div>
-        <h1> How many team members can I invite?
-          <div class="icon"></div>
-        </h1>
-        <p>You can invite up to 2 additional users on the Free plan. There is no limit on 
-        team members for the Premium plan.</p>
-        <div class="border"></div>
+  <main>
+    <img src="images/illustration-box-desktop.svg" alt="box" class="box">
+    <section>
+     
+    <div class="image">
+      <img src="images/illustration-woman-online-mobile.svg" alt="mobile image" class="mobileImg">
+      <img src="images/illustration-woman-online-desktop.svg" alt="desktom image" class="desktopImg">
+      <img src="images/bg-pattern-mobile.svg" alt="mobile background" class="mobileBg" >
+      <img src="images/bg-pattern-desktop.svg" alt=" desktop background" class="desktopBg">
+      
     </div>
-    <div>
-      <h1> What is the maximum file upload size?
-          <div class="icon"></div>
-        </h1>
-        <p>No more than 2GB. All files in your account must fit your
-          allotted storage space.
-        </p>
-        <div class="border"></div>
-    </div>  
-    <div>
-        <h1> How do I reset my password?<div class="icon"></div></h1>
-        <p>Click “Forgot password” from the login page or “Change password” from your profile page.
+  <div class="content">
+    <h2 class="faq">FAQ</h2>
+    <div class="text">
+    <div class="faq1">
+      <h1> How many team members can I invite?</h1>
+      <div class="arrow"></div>
+      <p>You can invite up to 2 additional users on the Free plan. There is no limit on
+        team members for the Premium plan.</p>
+      <div class="border"></div>
+    </div>
+    <div class="faq2">
+      <h1> What is the maximum file upload size?</h1>
+      <div class="arrow"></div>
+      <p>No more than 2GB. All files in your account must fit your
+        allotted storage space.</p>
+      <div class="border"></div>
+    </div>
+    <div class="faq3">
+      <h1> How do I reset my password?</h1>
+      <div class="arrow"></div>
+      <p>Click “Forgot password” from the login page or “Change password” from your profile page.
         A reset link will be emailed to you.</p>
-        <div class="border"></div>
-    </div> 
-    <div>
-        <h1>Can I cancel my subscription?<div class="icon"></div></h1>
-        <p>Yes! Send us a message and we’ll process your request no questions asked.</p>
-        <div class="border"></div>
-    </div> 
-    <div>
-       <h1>Do you provide additional support?<div class="icon"></div></h1>
-       <p> Chat and email support is available 24/7. Phone lines are open during normal business hours.</p>
-       <div class="border"></div>
-    </div> 
+      <div class="border"></div>
+    </div>
+    <div class="faq4">
+      <h1>Can I cancel my subscription?</h1>
+      <div class="arrow"></div>
+      <p>Yes! Send us a message and we’ll process your request no questions asked.</p>
+      <div class="border"></div>
+    </div>
+    <div class="faq5">
+      <h1>Do you provide additional support?</h1>
+      <div class="arrow"></div>
+      <p> Chat and email support is available 24/7. Phone lines are open during normal business hours.</p>
+      <div class="border"></div>
+    </div>
+    </div>
+  </div>
+
 </section>
-<!-- </div> -->
 </main>
-<script>
-
-  const btn = document.querySelectorAll('div h1');
-  const picture = ['images/illustration-woman-online-desktop.svg','images/illustration-woman-online-mobile.svg'];
-
-      btn.forEach(function(item){
-          item.addEventListener('click', function(){
-          item.classList.toggle('active');
-          console.log(item)
-
-  })
-})
-const pic = document.querySelector('#img1');
 
 
+  <script>
 
-function changePic(){
-  
-  if (window.innerWidth > 600){
-    
-    document.getElementById('img1').src = picture[0];
-  }
-    else {
-    document.getElementById('img1').src = picture[1];}
-}
-window.addEventListener('resize',changePic);
+    const btn = document.querySelectorAll('div h1');
+   
 
-</script>
+    btn.forEach(function (item) {
+      item.addEventListener('click', function () {
+        item.classList.toggle('active');
+        console.log(item)
+
+      })
+    })
+   
+
+
+
+  </script>
 </body>
+
 </html>
